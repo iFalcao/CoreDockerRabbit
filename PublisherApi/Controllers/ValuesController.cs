@@ -29,7 +29,7 @@ namespace PublisherApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(string data)
+        public IActionResult Post([FromBody] string data)
         {
             Console.WriteLine("received a Post: " + data);
             _messageService.Enqueue(data);
