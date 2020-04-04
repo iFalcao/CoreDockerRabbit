@@ -21,7 +21,7 @@ namespace Worker
             var json = JsonConvert.SerializeObject(postData);
             var content = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
 
-            var result = await _httpClient.PostAsync("https://localhost:5001/api/values", content);
+            var result = await _httpClient.PostAsync("http://publisher_api:80/api/values", content);
             string resultContent = await result.Content.ReadAsStringAsync();
             Console.WriteLine("Server returned: " + resultContent);
         }
